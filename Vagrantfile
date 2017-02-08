@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
     node.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
     end
-    node.vm.network "private_network", ip: "10.10.20.10"
+    #node.vm.network "private_network", ip: "10.10.20.10"
     node.vm.synced_folder '.', '/vagrant'
     node.ssh.forward_agent = true
     node.ssh.insert_key = true
@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
       s.privileged = false
       s.inline = "sudo sed -i '/tty/!s/mesg n/tty -s \\&\\& mesg n/' /root/.profile"
     end
-    # PROVISION START 
+    # PROVISION START
     node.vm.provision "file", source: "~/.ssh/id_rsa", destination: "~/.ssh/id_rsa"
     node.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
     node.vm.provision "file", source: "~/.gitconfig", destination: "~/.gitconfig"
