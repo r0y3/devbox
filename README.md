@@ -19,7 +19,10 @@ Getting Started
 
 3. **Install packer**
 
-   Follow installation instruction from [Packer's docs](https://www.packer.io/intro/getting-started/setup.html).
+   ```
+   $ curl https://releases.hashicorp.com/packer/0.12.2/packer_0.12.2_linux_amd64.zip -o packer_0.12.2_linux_amd64.zip
+   $ sudo unzip packer_0.12.2_linux_amd64.zip -d /usr/local
+   ```
 
 4. **Install Ansible**
 
